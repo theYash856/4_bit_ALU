@@ -48,4 +48,20 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 │   └── waveform.png
 └── README.md
 ```
+## 5. Simulation & RTL Schematic
 
+### Waveform
+![Waveform](docs/waveform.png)
+
+### RTL Schematic
+![Schematic_1](docs/schematic_1.png)
+![Schematic_2](docs/schematic_2.png)
+![Detailed Schematic](docs/schematic_detailed.png)
+
+## 6. Key Learnings
+- Designed a hierarchical ALU architecture by reusing `ALU_1_bit` instead of directly adding all the operations in single `ALU_4_bit`.
+- Implementing arithmetic operations using ripple-carry architecture.
+- Implemented and verified ALU status flags: Carry (`C`), Zero (`Z`), Negative (`N`), and Overflow (`V`).
+- Debugged subtraction (`SUB`) logic. Learned that operand inversion should be handled at the 4-bit datapath level rather than inside each 1-bit ALU cell. This made me realise the importance of separating control logic and datapath logic in hierarchical RTL design.
+- Debugged a control-path issue in `ALU_TOP` where a default case unintentionally overrode valid outputs causing all operations (0000–0111) to result in zero.
+- Learned to efficiently read simulation waveforms and debug design errors directly from signal behavior.
