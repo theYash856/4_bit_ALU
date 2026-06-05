@@ -18,19 +18,19 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 | Opcode | Operation | Description |
 |:------------:|:---------------:|:-----------------:|
 | 0000| AND | Bitwise AND of A and B|
-| 0001| OR | Bitwsie OR of A and B|
+| 0001| OR | Bitwise OR of A and B|
 | 0010| NOT| Bitwise NOT of A|
 | 0011| NAND | Bitwise NAND of A and B|
 |0100| XOR | Bitwise XOR of A and B|
-|0101| NOR | Bitwsie NOR of A and B|
+|0101| NOR | Bitwise NOR of A and B|
 |0110| ADD| A + B|
 |0111| SUB | A - B|
-|1000| SLL | Shift Left Logical of A|
-|1001| SRL| Shift Right Logical of A|
-|1010| SRA| Shift Right Arithmetic of A|
-|1011| SEQ| Set Equal to A and B|
-|1100| SLT | Set Less Than from A and B|
-|1101| SGT| Set Greater Than from A and B|
+|1000| SLL | Shift Left Logical (for A)|
+|1001| SRL| Shift Right Logical (for A)|
+|1010| SRA| Shift Right Arithmetic (for A)|
+|1011| SEQ| Set Equal to (A == B)|
+|1100| SLT | Set Less Than (A < B)|
+|1101| SGT| Set Greater Than (A > B)|
 |1110| Increment | A + 1 |
 |1111| Decrement | A - 1| 
 
@@ -60,7 +60,7 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 
 ## 6. Key Learnings
 - Designed a hierarchical ALU architecture by reusing `ALU_1_bit` instead of directly adding all the operations in single `ALU_4_bit`.
-- Implementing arithmetic operations using ripple-carry architecture.
+- Implemented arithmetic operations using ripple-carry architecture.
 - Implemented and verified ALU status flags: Carry (`C`), Zero (`Z`), Negative (`N`), and Overflow (`V`).
 - Debugged subtraction (`SUB`) logic. Learned that operand inversion should be handled at the 4-bit datapath level rather than inside each 1-bit ALU cell. This made me realise the importance of separating control logic and datapath logic in hierarchical RTL design.
 - Debugged a control-path issue in `ALU_TOP` where a default case unintentionally overrode valid outputs causing all operations (0000–0111) to result in zero.
