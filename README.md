@@ -44,14 +44,16 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 ├── tb/
 │   └── ALU_TOP_tb.v
 ├── docs/
-│   ├── schematic.png
-│   └── waveform.png
+│   ├── waveform.png    
+│   ├── schematic_1.png
+│   ├── schematic_2.png
+│   └── schematic_detailed.png
 └── README.md
 ```
 ## 5. Simulation & RTL Schematic
 
 ### Waveform
-![Waveform](doc/waveform.png)
+![Waveform](./doc/waveform.png)
 
 ### RTL Schematic 
 ![Schematic_1](./doc/schematic_1.png)
