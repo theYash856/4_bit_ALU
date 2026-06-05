@@ -53,11 +53,9 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 ### Waveform
 ![Waveform](docs/waveform.png)
 
-### RTL Schematic
-![Schematic_1](docs/schematic_1.png)
-![Schematic_2](docs/schematic_2.png)
-![Detailed Schematic](docs/schematic_detailed.png)
-
+![Schematic_1](./docs/schematic_1.png)
+![Schematic_2](./docs/schematic_2.png)
+![Detailed Schematic](./docs/schematic_detailed.png)
 ## 6. Key Learnings
 - Designed a hierarchical ALU architecture by reusing `ALU_1_bit` instead of directly adding all the operations in single `ALU_4_bit`.
 - Implementing arithmetic operations using ripple-carry architecture.
