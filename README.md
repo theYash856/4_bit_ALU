@@ -1,7 +1,7 @@
 # 4-Bit ALU - Verilog Implementation
 
 ## 1. Overview
-A 4-bit Arithmetic Logic Unit (ALU) designed in Verilog HDL using behavioral modeling. It implements a 16-operation instruction set including arithmetic, logical, shift, and comparison functions. Each operation is selected via a 4-bit opcode and verified through a structured testbench and waveform analysis in Xilinx Vivado.
+A 4-bit Arithmetic Logic Unit (ALU) designed in Verilog HDL using a hybrid modeling (Behavioral + Structural RTL design approach). It implements a 16-operation instruction set including arithmetic, logical, shift, and comparison functions. Each operation is selected via a 4-bit opcode and verified through a structured testbench and waveform analysis in Xilinx Vivado.
 
 Built as my first RTL design project, marking an important milestone in my VLSI and digital design learning journey.
 
@@ -27,7 +27,7 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 |0111| SUB | A - B|
 |1000| SLL | Shift Left Logical (for A)|
 |1001| SRL| Shift Right Logical (for A)|
-|1010| SRA| Shift Right Arithmetic (for A)|
+|1010| SRA| Shift Right Arithmetic (for signed A)|
 |1011| SEQ| Set Equal to (A == B)|
 |1100| SLT | Set Less Than (A < B)|
 |1101| SGT| Set Greater Than (A > B)|
@@ -65,3 +65,8 @@ Supports 16 operations via 4-bit opcode (Operation Code)
 - Debugged subtraction (`SUB`) logic. Learned that operand inversion should be handled at the 4-bit datapath level rather than inside each 1-bit ALU cell. This made me realise the importance of separating control logic and datapath logic in hierarchical RTL design.
 - Debugged a control-path issue in `ALU_TOP` where a default case unintentionally overrode valid outputs causing all operations (0000–0111) to result in zero.
 - Learned to efficiently read simulation waveforms and debug design errors directly from signal behavior.
+
+## 7. Tools Used
+- **Language:** Verilog HDL
+- **Simulator:** Xilinx Vivado (Simulation + Synthesis)
+- **Design Style:** Hybrid (Behavioral + Structural)
